@@ -767,3 +767,62 @@ fill: var(--accent-orange-color);
 .footer-link:hover {
     color: var(--accent-orange-color);
 }
+
+/* --- MODAL --- */
+
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(82, 83, 87, 0.52);
+    position: fixed;
+    top: 0;
+    
+    transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+transform: translate(-50%, -50%) scale(0.7);
+transition: transform 300ms linear;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 300ms linear;
+
+width: 400px;
+min-height: 500px;
+background-color: #ffffff;
+border-radius: 10px;
+
+}
+
+.modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    
+    border: 1px solid #999999;
+    border-radius: 50%;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    border-color: var(--accent-orange-color);
+    fill: var(--accent-orange-color);
+}
